@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presidents Quiz</title>
+
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <!-- Blueprint CSS -->
+    <link href="https://unpkg.com/blueprint-css@3.1.1/dist/blueprint.min.css" rel="stylesheet" />
+
+    <!-- Common timer code -->
+    <link rel="stylesheet" href="timer-styles.css">
+    <script src="timer.js" defer></script>
+
+    <link rel="stylesheet" href="president-styles.css">
+    <script src="presidents-scripts.js" defer></script>
+</head>
+<body>
+    <div class="game-area" id="gameArea">
+        <h1 class="title">U.S. Presidents Quiz</h1>
+
+        <div class="user-input">
+            <input type="text" id="gameInput" class="game-input" placeholder="Enter a president's name..." />
+            <button id="giveUpBtn" class="give-up-button">Give up?</button>
+        </div>
+
+        <div class="game-container">
+            <div id="score"></div>
+            <div id="timer"></div>
+
+            <!-- Grid to hold president info -->
+            <div bp="grid 6@sm" id="results">
+                <div>
+                    <div class="column" bp="grid 6 gap-none"></div>
+                </div>
+                <div>
+                    <div class="column" bp="grid 6 gap-none"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

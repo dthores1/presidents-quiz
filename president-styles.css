@@ -1,0 +1,120 @@
+:root {
+    --cell-size: 300px; 
+}
+
+* {
+    
+    font-family: 'Righteous', cursive;
+    /* text-align: center; */
+    padding: 0.25em;
+    font-size: 115%;
+    /* margin: 0px auto; */
+    text-transform: uppercase;
+}
+
+body {
+    background-color: #333;
+    margin: 0;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin: 0;
+}
+
+.game-area {
+    display: none;
+    background-color: #006699;
+    border-radius: 1rem;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+}
+
+.user-input {
+    text-align: center;
+    font-size: 16px;
+}
+
+.game-input {
+    width: 100%;
+}
+
+.give-up-button {
+    margin: 1rem;
+    font-size: 20px;
+    border: 3px solid #333;
+    background-color: #F28200;
+    cursor: pointer;    
+}
+
+.give-up-button:hover {
+    background-color: #F28F00;
+    transform: scale(1.05);
+}
+
+/* Shake the input on invalid entry */ 
+.input-error {
+    animation: shake 0.2s ease-in-out 0s 2;
+    box-shadow: 0 0 0.5em red;
+}
+
+@keyframes shake {
+  0% { margin-left: 0rem; }
+  25% { margin-left: 0.5rem; }
+  75% { margin-left: -0.5rem; }
+  100% { margin-left: 0rem; }
+}
+
+#results {
+    /* display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto); */
+    color: #333;
+    font-size: 16px;
+}
+
+.cell {
+    background: #fff;
+    color: #333;
+    width: var(--cell-size);
+    height: 1em;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    flex-direction: column;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.cell.not-found {
+    color: red;
+}
+
+.cell.correct {
+  animation: blinker 1s linear 2s;
+  animation-delay: -0.0s;
+}
+
+@keyframes blinker {  
+  25% { background-color: rgb(121, 152, 121); }
+  50% { background-color: green; }
+  75% { background-color: rgb(121, 152, 121); }
+}
+
+#score, #timer {
+    text-align: center;
+}
